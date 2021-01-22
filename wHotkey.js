@@ -86,11 +86,11 @@ const createListenersFn = (listeners, fn) => (hotkey, callback) => {
 };
 
 const registerListener = (listeners, hotkey, callback) => {
-  listeners.push({ hotkey: normalizeHotkey(hotkey), callback });
+  listeners.push({ hotkey: wHotkey.normalizeHotkey(hotkey), callback });
 };
 
 const unregisterListener = (listeners, hotkey, callback) => {
-  const normalized = normalizeHotkey(hotkey);
+  const normalized = wHotkey.normalizeHotkey(hotkey);
 
   const index = listeners.findIndex(
     (l) => l.callback === callback
